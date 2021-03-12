@@ -1,0 +1,157 @@
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
+import java.util.Scanner;
+
+//import com.sun.tools.classfile.StackMapTable_attribute.verification_type_info;
+
+import java.io.*; 
+import java.util.*; 
+public class SendLyrics {
+
+	public static void main(String[] args) throws FileNotFoundException {
+		System.out.println("nawaf");
+		
+//		try {
+//			Thread.sleep(1500);
+//		} catch (InterruptedException e1) {
+//			// TODO Auto-generated catch block
+//			e1.printStackTrace();
+//		}
+		//System.out.println("zgzg"); 
+		Robot robot = null;
+	        try {
+	            robot = new Robot();
+	        } catch (AWTException e) {
+	            // TODO Auto-generated catch block
+	            e.printStackTrace();
+	        }
+//	        robot.mouseMove(60, 490);
+//	        robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+//	        robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+//	        robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+//	        robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+//	        robot.mouseMove(450, 230);
+//	        robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+//	        robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+	        System.out.println("step1");
+	        int time = 70;
+	        try {
+				Thread.sleep(1500);
+			} catch (InterruptedException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+
+		      File file = new File("/Users/nawafsh/MyProjects/SendLyrics/src/nansi.txt");
+
+		      FileInputStream inputStream = new FileInputStream(file);
+
+		      Scanner sc = new Scanner(inputStream);
+
+//		      StringBuffer buffer = new StringBuffer();
+
+		      while(sc.hasNext()) {
+//		    	System.out.println(sc.nextLine());
+//		         buffer.append(" "+sc.nextLine());
+		    	  String text =sc.nextLine() ;
+		    	  StringSelection stringSelection = new StringSelection(text);
+		    	  Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+		    	  clipboard.setContents(stringSelection, stringSelection);
+		    	  try {
+						Thread.sleep(1500);
+					} catch (InterruptedException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+		    	 // Robot robot = new Robot();
+		    	  robot.keyPress(KeyEvent.VK_META);
+		    	  try {
+		    		  
+						Thread.sleep(time);
+					} catch (InterruptedException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+		    	  robot.keyPress(KeyEvent.VK_V);
+		    	  try {
+						Thread.sleep(time);
+					} catch (InterruptedException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+		    	  robot.keyRelease(KeyEvent.VK_V);
+		    	  try {
+						Thread.sleep(time);
+					} catch (InterruptedException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+		    	  robot.keyRelease(KeyEvent.VK_META);
+		    	  try {
+						Thread.sleep(time);
+					} catch (InterruptedException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+		    	  robot.keyPress(KeyEvent.VK_SPACE);
+		    	  try {
+						Thread.sleep(time);
+					} catch (InterruptedException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+		    	  robot.keyRelease(KeyEvent.VK_SPACE);
+		    	  try {
+						Thread.sleep(time);
+					} catch (InterruptedException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+		    	  robot.keyPress(KeyEvent.VK_ENTER);
+		    	  try {
+						Thread.sleep(time);
+					} catch (InterruptedException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+			      robot.keyRelease(KeyEvent.VK_ENTER);
+		      }
+//	        robot.keyPress(KeyEvent.VK_ENTER);
+//	        robot.keyRelease(KeyEvent.VK_ENTER);
+//	        robot.keyPress(KeyEvent.VK_N);
+//	        System.out.println("step2");
+	        
+	        try {
+				Thread.sleep(1500);
+			} catch (InterruptedException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+	        System.out.println("step3");
+
+	       // robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+	        robot.mouseMove(520, 230);
+
+//	        robot.keyPress(KeyEvent.VK_ENTER);
+//	        robot.keyRelease(KeyEvent.VK_ENTER);
+//	        robot.keyPress(KeyEvent.VK_CONTROL);
+//	        robot.keyPress(KeyEvent.VK_TAB);
+//	        robot.keyRelease(KeyEvent.VK_TAB);
+//	        robot.keyPress(KeyEvent.VK_LEFT);
+//	        robot.keyRelease(KeyEvent.VK_LEFT);
+//	        robot.keyRelease(KeyEvent.VK_CONTROL);
+
+	        
+System.out.println("done22");
+	}
+
+}
+
+
+

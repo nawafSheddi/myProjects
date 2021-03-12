@@ -1,0 +1,120 @@
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
+import java.util.Scanner;
+
+
+import java.io.*; 
+import java.util.*; 
+public class SendLyrics {
+
+	public static void main(String[] args) throws FileNotFoundException {
+
+		Robot robot = null;
+	        try {
+	            robot = new Robot();
+	        } catch (AWTException e) {
+	            // TODO Auto-generated catch block
+	            e.printStackTrace();
+	        }
+
+	        System.out.println("step1");
+	        int time = 70;
+	        try {
+				Thread.sleep(1500);
+			} catch (InterruptedException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+
+		      File file = new File("/Users/nawafsh/MyProjects/SendLyrics/src/nansi.txt");
+
+		      FileInputStream inputStream = new FileInputStream(file);
+
+		      Scanner sc = new Scanner(inputStream);
+
+
+		      while(sc.hasNext()) {
+
+		    	  String text =sc.nextLine() ;
+		    	  StringSelection stringSelection = new StringSelection(text);
+		    	  Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+		    	  clipboard.setContents(stringSelection, stringSelection);
+		    	  try {
+						Thread.sleep(1500);
+					} catch (InterruptedException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+		    	  robot.keyPress(KeyEvent.VK_META);
+		    	  try {
+		    		  
+						Thread.sleep(time);
+					} catch (InterruptedException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+		    	  robot.keyPress(KeyEvent.VK_V);
+		    	  try {
+						Thread.sleep(time);
+					} catch (InterruptedException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+		    	  robot.keyRelease(KeyEvent.VK_V);
+		    	  try {
+						Thread.sleep(time);
+					} catch (InterruptedException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+		    	  robot.keyRelease(KeyEvent.VK_META);
+		    	  try {
+						Thread.sleep(time);
+					} catch (InterruptedException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+		    	  robot.keyPress(KeyEvent.VK_SPACE);
+		    	  try {
+						Thread.sleep(time);
+					} catch (InterruptedException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+		    	  robot.keyRelease(KeyEvent.VK_SPACE);
+		    	  try {
+						Thread.sleep(time);
+					} catch (InterruptedException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+		    	  robot.keyPress(KeyEvent.VK_ENTER);
+		    	  try {
+						Thread.sleep(time);
+					} catch (InterruptedException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+			      robot.keyRelease(KeyEvent.VK_ENTER);
+		      }
+	        
+	        try {
+				Thread.sleep(1500);
+			} catch (InterruptedException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+
+	        System.out.println("done");
+	}
+
+}
+
+
+
